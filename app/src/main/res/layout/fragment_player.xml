@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PlayerFragment">
+
+    <ImageView
+        android:id="@+id/audio_cover_pic"
+        android:layout_width="@dimen/audio_item_image_size"
+        android:layout_height="@dimen/audio_item_image_size"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/audio_image"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/appicon" />
+
+    <TextView
+        android:id="@+id/audio_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="6dp"
+        android:text="..."
+        android:textSize="@dimen/audio_item_big_text_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/audio_artists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/audio_cover_pic"
+        android:layout_alignStart="@+id/audio_title"
+        android:layout_marginBottom="4dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="..." />
+
+    <ProgressBar
+        android:id="@+id/play_progress_bar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="4dp"
+        android:clickable="false"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/play_options_ib"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:contentDescription="@string/more"
+        android:focusable="true"
+        app:srcCompat="@drawable/ic_play_24dp" />
+
+    <ProgressBar
+        android:id="@+id/play_percentage_bar"
+        android:layout_width="match_parent"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_height="4dp"
+        android:layout_marginBottom="3dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+</RelativeLayout>

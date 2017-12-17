@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".ui.AudioListActivity">
+
+    <com.olatests.musicplayer.ui.RefreshProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/audios_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/prev_button"
+            android:layout_width="32dip"
+            android:layout_height="32dip"
+            android:background="@drawable/circular_button_selector"
+            android:onClick="goPrev"
+            app:srcCompat="@drawable/ic_arrow_prev_24dp"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@drawable/button_text_selector" />
+
+        <LinearLayout
+            android:id="@+id/page_num_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:onClick="goToPage"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/circular_button_selector"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@drawable/button_text_selector" />
+
+            <Button
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:onClick="goToPage"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/circular_button_selector"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@drawable/button_text_selector" />
+
+            <Button
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:onClick="goToPage"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/circular_button_selector"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@drawable/button_text_selector" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/next_button"
+            android:layout_width="32dip"
+            android:layout_height="32dip"
+            android:layout_marginStart="20dp"
+            app:srcCompat="@drawable/ic_arrow_next_24dp"
+            android:background="@drawable/circular_button_selector"
+            android:onClick="goNext"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@drawable/button_text_selector" />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/player_fragment"
+        android:name="com.olatests.musicplayer.ui.PlayerFragment"
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2" />
+</LinearLayout>
